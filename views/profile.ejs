@@ -1,0 +1,144 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bluescript</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" integrity="sha512-t4GWSVZO1eC8BM339Xd7Uphw5s17a86tIZIj8qRxhnKub6WoyhnrxeCIMeAqBPgdZGlCcG2PrZjMc+Wr78+5Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.datatables.net/v/bs4/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a href="/" class="navbar-brand"><i class="fas fa-code me-2"></i>B&S</a>
+            <button class="navbar-toggler" data-bs-target="any-nav"
+            data-bs-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            </button>
+            
+            <div id="my-nav" class="">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/"><i class="fas fa-home me-1"></i>Home</a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/add"><i class="fas fa-user-plus me-1"></i>Add name</a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"><i class="fas fa-globe me-1"></i>About</a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/login"><i class="fas fa-envelope me-1"></i>Logout</a>
+                    </li>
+
+
+
+
+                 </ul>
+
+             </div>
+
+
+         </div>
+
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-lg-12">
+               
+                <% if (message){ %>
+                    <div class="alert alert-dismissible fade show alert-<%= message.type %>" role="alert">
+                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="close"></button>
+                        <strong><%= message.message %></strong>
+                    </div>
+                 <% } %>
+                <div class="table-responsive">
+                    <% if (detaildata != ''){ %>
+                        <table class="table table-striped text-center my-3">
+                            <thead>
+                                <tr class="table-primary">
+                                    
+                                    <th>Name</th>
+                                    <th>model</th>
+                                    <th>kinds</th>
+                                    <th>operations</th>
+                                   
+                                </tr>
+                            </thead>
+    
+                            <tbody>
+                                <% detaildata.forEach((detaildat) => { %>
+                               
+                                    <tr>
+
+                                   
+                                        <td> <%= detaildat.name %></td>
+                                        <td> <%= detaildat.model %></td>
+                                        <td> <%= detaildat.kind %></td>
+                                        <td>
+                                            <a href="/editpost/<%= detaildat._id %>" class="text-success"><i class="fas fa-edit fa-lg mx-1" data-id"<%=detaildata._id%>"></i></a>
+                                            <a href="/deletepost/<%= detaildat._id %>" class="text-danger"><i class="fas fa-trash fa-lg mx-1" data-id"<%= detaildata._id %>"></i></a>
+                                        </td>
+                                    
+                                    </tr>
+                                <% }) %>
+                                 
+                              
+                            </tbody>
+                            
+                        </table>
+
+                    <% } else { %>
+                            <h1 class="text-center text-secondary mt-5">No selection is found in the database </h1>
+
+                        <% } %>
+                    
+                 
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha512-VK2zcvntEufaimc+efOYi622VN5ZacdnufnmX7zIhCPmjhKnOi9ZDMtg1/ug5l183f19gG1/cBstPO4D8N/Img==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.datatables.net/v/bs4/dt-1.13.4/datatables.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $("table").DataTable({
+                order:[0, 'desc']
+            });
+        });
+    </script>
+</body>
+</html>

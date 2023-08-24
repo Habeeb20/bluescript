@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: #020412;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+
+
+    }
+
+    .menu ul {
+        list-style: none;
+
+    }
+
+    .menu {
+        display: inline-flex;
+        position: absolute;
+        width: 100%;
+        top: 4%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .menu>ul {
+        list-style: none;
+        padding: 2px 342px;
+        display: inline-block;
+        background: #313131;
+        color: #fff;
+    }
+
+    .menu>ul>li {
+        position: relative;
+
+        cursor: pointer;
+        font-family: poppins;
+        font-size: 14px;
+        letter-spacing: 1px;
+        float: left;
+        width: 136px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 0;
+    }
+
+    .dropdown li {
+        background: #313131;
+        padding: 10px;
+    }
+
+    .dropdown li:hover {
+        background: #029bd5;
+
+
+    }
+
+    .menu li>.dropdown li {
+        display: none;
+        padding-right: 2px;
+
+    }
+
+    .menu li:hover>.dropdown li {
+        display: block;
+        transform-origin: top-center;
+        opacity: 0;
+    }
+
+    .menu li:hover>.dropdown {
+        perspective: 1000px;
+    }
+
+
+    .menu li:hover>.dropdown li:nth-child(1) {
+        animation: animate 300ms ease-in-out forwards;
+        animation-delay: -150ms
+    }
+
+    .menu li:hover>.dropdown li:nth-child(2) {
+        animation: animate 300ms ease-in-out forwards;
+        animation-delay: 0ms
+    }
+
+    .menu li:hover>.dropdown li:nth-child(3) {
+        animation: animate 300ms ease-in-out forwards;
+        animation-delay: 150ms
+    }
+
+    .menu li:hover>.dropdown li:nth-child(4) {
+        animation: animate 300ms ease-in-out forwards;
+        animation-delay: 300ms
+    }
+
+
+    @keyframes animate {
+        0% {
+            opacity: 0;
+            transform: rotateX(-90deg);
+        }
+
+        50% {
+            transform: rotateX(20deg);
+        }
+
+        100% {
+            opacity: 1;
+            transform: rotateX(0deg);
+        }
+
+    }
+
+
+    .dropdown1 {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 0;
+    }
+
+    .dropdown1 li {
+        background: #313131;
+        padding: 10px;
+    }
+
+    .dropdown1 li:hover {
+        background: #029bd5;
+
+
+    }
+
+    .menu li>.dropdown1 li {
+        display: none;
+
+
+    }
+
+    .menu li:hover>.dropdown1 li {
+        display: block;
+        transform-origin: top-center;
+        opacity: 0;
+    }
+
+    .menu li:hover>.dropdown1 {
+        perspective: 1000px;
+    }
+
+
+    .menu li:hover>.dropdown1 li:nth-child(1) {
+        animation: animate 300ms ease-in-out forwards;
+        animation-delay: -150ms
+    }
+
+    .menu li:hover>.dropdown1 li:nth-child(2) {
+        animation: animate 300ms ease-in-out forwards;
+        animation-delay: 0ms
+    }
+
+    .menu li:hover>.dropdown1 li:nth-child(3) {
+        animation: animate 300ms ease-in-out forwards;
+        animation-delay: 150ms
+    }
+
+    .menu li:hover>.dropdown1 li:nth-child(4) {
+        animation: animate 300ms ease-in-out forwards;
+        animation-delay: 300ms
+    }
+
+    .text {
+        margin-top: 50px;
+    }
+
+    .text1 {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        color: #4070f4;
+        margin-top: 30px;
+        margin-left: 150px;
+        float: left;
+        font-size: xx-large;
+
+    }
+
+    .text1 .first-text {
+        color: #fff;
+    }
+
+    .text1 .sec-text:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #010718;
+        border-left: 2px solid #4070f4;
+        animation: animate 4s steps(12) infinite;
+
+    }
+
+
+
+    .text a {
+
+        display: inline-block;
+        border-radius: 6px;
+        border: 2px solid #fff724;
+        color: #fff724;
+        padding: 10px 30px;
+        text-decoration: none;
+        margin-top: 290px;
+        margin-left: 200px;
+    }
+
+    .text .btn {
+        background: #fff724;
+        color: #000;
+        margin-left: 30px;
+        font-weight: 600;
+        cursor: pointer;
+
+    }
+
+    .text img {
+        float: right;
+        margin-top: 1%;
+        padding-top: 3px;
+    }
+
+    .text .img {
+        animation: inbos 10s;
+        animation-duration: 20s;
+    }
+
+
+    @keyframes inbos {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+
+        0% {
+            right: -10%;
+
+        }
+
+        100% {
+            right: 0%;
+        }
+    }
+
+
+
+
+
+
+    .containerr {
+        background-color: rgb(66, 78, 66);
+        overflow: hidden;
+        margin: 10px;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        left: 0;
+
+
+
+    }
+
+    .containerr a {
+        display: flexbox;
+        padding: 10px;
+        padding-top: 25px;
+        margin-right: 40px;
+
+
+    }
+
+    .right a {
+        float: left;
+        margin-left: 400px;
+        color: white;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: large;
+        font-weight: 100;
+    }
+
+    .containerr a:hover,
+    .containerr a.active {
+        color: black;
+    }
+
+    a {
+        float: right;
+        text-decoration: none;
+        color: white;
+        text-transform: capitalize;
+        font-size: 15px;
+        font-family: sans-serif;
+    }
+
+    .right {
+        float: left;
+        margin-left: -20%;
+        color: #0000;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: large;
+        font-weight: 100;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    h3 {
+        font-size: 1.0rem;
+        font-weight: 300;
+    }
+
+    h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    h5 {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #1d1d1d;
+
+    }
+
+    h6 {
+        color: #d8d8d8;
+    }
+
+    #home {
+        background-image: url("back.jpg");
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-position: top center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+    }
+
+    #home span {
+        color: coral;
+    }
+</style>
+
+
+<body>
+
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+
+            <div class="containerr">
+                <div class="right">
+                    <a href="#">Bluescript</a>
+                </div>
+                <a href="#"></a>
+                <a href="#">Home</a>
+                <a href="#">Bluscript@gmail.com</a>
+                <a href="#">oluyole estate<br> Ibadan</a>
+
+
+            </div>
+
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mx-auto mt-6">
+                <div class="card shadow">
+
+                    <div class="text">
+                        <h4 style="color: white; margin-left: 30%;">the software allows you to create any name of a product of 
+                            <br> your choice with models and type and also display a profile to see the added names </h4>
+
+                        <img name="slide" class="img" width="400" height="200">
+                        <a href="">chat us</a>
+
+                        <a href="/login" class="btn">Add name</a>
+
+
+
+
+
+
+
+                        <div class="text1">
+                            <span class="first-text">welcome to</span>
+                            <span class="sec-text">Bluescript </span>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+</body>
+<script>
+    var i = 0;
+    var images = [];
+    var time = 1000;
+
+
+    images[0] = 'p22.png';
+    images[1] = 'p20.png';
+    images[2] = 'p5.png';
+
+
+    function changeimg() {
+        document.slide.src = images[i];
+
+
+        if (i < images.length - 1) {
+            i++;
+        } else {
+            i = 0;
+        }
+
+        setTimeout("changeimg()", time);
+    }
+
+
+    window.onload = changeimg
+
+</script>
+
+</html>
